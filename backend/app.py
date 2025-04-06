@@ -11,8 +11,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 app = Flask(__name__)
 
-# Load the trained model
-model = load_model(r'C:\Users\PRANAV RAJ\OneDrive\Desktop\DogBreed\backend\model.keras')
+#Load the model
+MODEL_PATH = os.path.join('model', 'model.keras')
+model = load_model(MODEL_PATH)
 
 # Class label dictionary
 classes = {
