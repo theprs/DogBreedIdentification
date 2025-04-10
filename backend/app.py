@@ -18,7 +18,7 @@ app = Flask(
 )
 
 #Load the model
-MODEL_PATH = os.path.join('backend', 'model.keras')
+MODEL_PATH = 'model.keras'
 model = load_model(MODEL_PATH)
 
 # Class label dictionary
