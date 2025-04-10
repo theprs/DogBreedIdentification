@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            <img src="{{ url_for('static', filename=image_file) }}" alt="Uploaded Dog" class="uploaded-image">
+            <p><strong>Predicted Breed:</strong> {{ prediction }}</p>
+            <p><strong>Confidence:</strong> {{ confidence }}%</p>
+            <form action="/" method="GET">
+                <button type="submit" class="predict-another-btn">Predict Another</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('beforeunload', function () {
+            navigator.sendBeacon('/cleanup/{{ image_file }}');
+        });
+    </script>
+</body>
+</html>
