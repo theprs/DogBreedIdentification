@@ -17,9 +17,6 @@ app = Flask(
     static_folder=os.path.join(frontend_path, 'static')
 )
 
-#Load the model
-MODEL_PATH = 'model.keras'
-model = load_model(MODEL_PATH)
 
 # Class label dictionary
 classes = {
@@ -73,6 +70,10 @@ def home():
 def predict():
     if 'file' not in request.files or request.files['file'].filename == '':
         return render_template('index.html', prediction="No image selected.")
+
+    #Load the model
+    MODEL_PATH = 'model.keras'
+    model = load_model(MODEL_PATH)
     
     file = request.files['file']
     filename = secure_filename(file.filename)
@@ -80,6 +81,7 @@ def predict():
     os.makedirs(static_dir, exist_ok=True)
     img_path = os.path.join(static_dir, filename)
     file.save(img_path)
+    
     img = image.load_img(img_path, target_size=(224, 224))
     img_tensor = image.img_to_array(img)
     img_tensor = np.expand_dims(img_tensor, axis=0)
