@@ -1,7 +1,5 @@
-Flask
-flask-cors
+flask
 tensorflow
 numpy
-Pillow
 gunicorn
 werkzeug
