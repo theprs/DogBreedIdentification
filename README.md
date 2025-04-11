@@ -20,7 +20,7 @@ A deep learning web application that accurately classifies dog breeds from image
 |--------------------|--------------------------------------------------------------|
 | **Languages**       | Python, HTML, CSS                                            |
 | **Frameworks/Libs** | TensorFlow, Keras, Pandas, NumPy, Matplotlib, Flask          |
-| **Deployment**      | Flask (Render), Netlify (Frontend), GitHub                  |
+| **Deployment**      | Flask (Render), Netlify (Frontend)                           |
 
 ---
 
