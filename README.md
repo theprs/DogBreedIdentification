@@ -26,6 +26,6 @@ A deep learning web application that accurately classifies dog breeds from image
 
 ## 🌐 Live Demo
 
-> 🟢 **Frontend :** [Netlify Live Site](https://dogbreedidentify.netlify.app/)
+> 🟢 **Deployment :** [Netlify Live Site](https://dogbreedidentify.netlify.app/)
 
 ---
